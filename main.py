@@ -142,10 +142,10 @@ def merge(items, previous, companies, settings):
 
 def feishu_send(events, settings):
     webhook=os.getenv("FEISHU_WEBHOOK_URL","").strip()
-    if not webhook: return {"sent":0,"status":"FEISHU_WEBHOOK_URL not configured"}
+    if not webhook: return {"sent":0,"sent_ids":[],"status":"FEISHU_WEBHOOK_URL not configured"}
     fresh=[e for e in events if e.get("risk_level") in ("P1","P2")]
-    if not fresh: return {"sent":0,"status":"no new P1/P2 events"}
-    secret=os.getenv("FEISHU_SIGNING_SECRET","").strip(); sent=0; errors=[]
+    if not fresh: return {"sent":0,"sent_ids":[],"status":"no pending P1/P2 events"}
+    secret=os.getenv("FEISHU_SIGNING_SECRET","").strip(); sent_ids=[]; errors=[]
     for e in fresh[:20]:
         title=e.get("title","")[:180]; url=e.get("url",""); companies=", ".join(x["name"] for x in e.get("matched_companies",[])) or "未匹配监控企业"
         text=f"[{e['risk_level']}] {'涉华 · ' if e.get('china_related') else ''}{title}\n企业：{companies}\n来源：{e.get('source','')}\n链接：{url}"
@@ -156,9 +156,9 @@ def feishu_send(events, settings):
         try:
             r=requests.post(webhook,json=body,timeout=15); r.raise_for_status(); data=r.json()
             if data.get("code",0)!=0: raise RuntimeError(str(data))
-            sent+=1; time.sleep(.25)
+            sent_ids.append(e.get("id","")); time.sleep(.25)
         except Exception as ex: errors.append(str(ex))
-    return {"sent":sent,"errors":errors[:5],"status":"ok" if not errors else "partial"}
+    return {"sent":len(sent_ids),"sent_ids":sent_ids,"errors":errors[:5],"status":"ok" if not errors else "partial"}
 
 def main():
     ap=argparse.ArgumentParser(); ap.add_argument("--once",action="store_true"); ap.add_argument("--offline",action="store_true"); args=ap.parse_args()
@@ -171,11 +171,15 @@ def main():
         health={"offline_fixture":{"ok":True,"count":len(inputs),"checked_at":iso()}}
     else: inputs,health=collect(sources,int(settings.get("poll_hours",24)))
     merged,fresh=merge(inputs,previous,companies,settings)
-    alerts=[x for x in fresh if x["risk_level"] in ("P1","P2")]
-    save(DATA/"events.json",merged)
+    alerts=[x for x in merged if x.get("risk_level") in ("P1","P2") and not x.get("feishu_sent_at")]
     sent=feishu_send(alerts,settings)
-    state={"updated_at":iso(),"sources":health,"companies_monitored":len(companies),"events_total":len(merged),"new_events":len(fresh),"new_alerts":len(alerts),"feishu":sent}
+    sent_ids=set(sent.get("sent_ids",[]))
+    for event in merged:
+        if event.get("id") in sent_ids: event["feishu_sent_at"]=iso()
+    save(DATA/"events.json",merged)
+    state={"updated_at":iso(),"sources":health,"companies_monitored":len(companies),"events_total":len(merged),"new_events":len(fresh),"new_alerts":sum(1 for x in fresh if x["risk_level"] in ("P1","P2")),"pending_alerts":sum(1 for x in alerts if x.get("id") not in sent_ids),"feishu":{k:v for k,v in sent.items() if k!="sent_ids"}}
     save(DATA/"state.json",state)
     print(json.dumps(state,ensure_ascii=False,indent=2))
 
 if __name__=="__main__": main()
+
