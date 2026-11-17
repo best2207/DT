@@ -1,35 +1,36 @@
 {
-  "updated_at": "2026-11-17T09:54:54+00:00",
+  "updated_at": "2026-11-17T09:57:12+00:00",
   "sources": {
     "federal_register": {
       "ok": true,
       "count": 79,
-      "checked_at": "2026-11-17T09:54:03+00:00",
-      "seconds": 0.43
+      "checked_at": "2026-11-17T09:56:20+00:00",
+      "seconds": 0.91
     },
     "gdelt": {
       "ok": true,
       "count": 0,
-      "checked_at": "2026-11-17T09:54:53+00:00",
-      "seconds": 50.11
+      "checked_at": "2026-11-17T09:57:10+00:00",
+      "seconds": 49.26
     },
     "mofcom_cacs": {
       "ok": true,
       "count": 0,
-      "checked_at": "2026-11-17T09:54:54+00:00",
-      "seconds": 0.7
+      "checked_at": "2026-11-17T09:57:12+00:00",
+      "seconds": 2.17
     },
     "rss": {
       "ok": true,
       "count": 0,
-      "checked_at": "2026-11-17T09:54:54+00:00",
+      "checked_at": "2026-11-17T09:57:12+00:00",
       "seconds": 0.0
     }
   },
   "companies_monitored": 0,
   "events_total": 37,
-  "new_events": 37,
-  "new_alerts": 28,
+  "new_events": 0,
+  "new_alerts": 0,
+  "pending_alerts": 28,
   "feishu": {
     "sent": 0,
     "status": "FEISHU_WEBHOOK_URL not configured"
