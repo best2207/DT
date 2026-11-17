@@ -231,7 +231,7 @@ def feishu_send(events, settings):
             "status":"ok" if not errors else "partial"}
 
 def main():
-    ap=argparse.ArgumentParser(); ap.add_argument("--once",action="store_true"); ap.add_argument("--offline",action="store_true"); args=ap.parse_args()
+    ap=argparse.ArgumentParser(); ap.add_argument("--once",action="store_true"); ap.add_argument("--offline",action="store_true"); ap.add_argument("--no-notify",action="store_true"); args=ap.parse_args()
     settings=load(CFG/"settings.json",{}); companies=load(CFG/"companies.json",{}).get("companies",[])
     sources=load(CFG/"sources.json",{}); previous=load(DATA/"events.json",[])
     if args.offline:
