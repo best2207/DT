@@ -1,0 +1,6 @@
+{
+  "federal_register": {"enabled": true, "terms": ["tariff", "export control", "antidumping", "China"], "per_page": 50},
+  "gdelt": {"enabled": true, "queries": ["tariff China trade", "antidumping China", "export control China"], "max_records": 20},
+  "mofcom_cacs": {"enabled": true, "url": "https://cacs.mofcom.gov.cn/cacscms/view/searchList"},
+  "rss": {"enabled": true, "feeds": []}
+}

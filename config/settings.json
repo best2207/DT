@@ -1,0 +1,10 @@
+{
+  "poll_hours": 24,
+  "max_events": 3000,
+  "feishu_min_level": "P2",
+  "china_keywords": ["中国", "中国企业", "中国原产", "涉华", "China", "Chinese", "PRC", "Chinese-origin"],
+  "risk_keywords": {
+    "P1": ["sanction", "entity list", "export ban", "import ban", "制裁", "实体清单", "禁令", "禁止进口", "反倾销立案", "反补贴立案"],
+    "P2": ["tariff", "antidumping", "countervailing", "export control", "recall", "lawsuit", "insolvency", "关税", "反倾销", "反补贴", "出口管制", "召回", "诉讼", "破产", "处罚"]
+  }
+}
