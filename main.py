@@ -11,6 +11,25 @@ DATA = ROOT / "data"
 CFG = ROOT / "config"
 UA = "TradeRiskMonitor/1.0 (+GitHub Actions public-source monitor)"
 
+TITLE_RULES = [
+    (re.compile(r"^Corrugated Die-Cut Cardboard Boxes From (.+?); Determinations$", re.I), "瓦楞模切纸箱（涉及{0}）：美国调查裁定"),
+    (re.compile(r"^Hardwood and Decorative Plywood From (.+?): Countervailing Duty Orders$", re.I), "硬木及装饰胶合板（涉及{0}）：反补贴税令"),
+    (re.compile(r"^Hardwood and Decorative Plywood From (.+?): Antidumping Duty Orders$", re.I), "硬木及装饰胶合板（涉及{0}）：反倾销税令"),
+    (re.compile(r"^Wood Mouldings and Millwork Products From (.+?): Final Results of Antidumping Duty Administrative Review; (.+)$", re.I), "木制线条及木工制品（涉及{0}）：反倾销行政复审最终结果（{1}）"),
+    (re.compile(r"^Certain Metal Lockers and Parts Thereof From (.+?): (.+)$", re.I), "金属储物柜及零部件（涉及{0}）：反补贴行政复审进展"),
+    (re.compile(r"^Wooden Cabinets and Vanities and Components Thereof From (.+?): (.+)$", re.I), "木制橱柜、浴室柜及零部件（涉及{0}）：反补贴行政复审进展"),
+    (re.compile(r"^Certain Pea Protein From (.+?): (.+)$", re.I), "豌豆蛋白（涉及{0}）：反倾销行政复审进展"),
+    (re.compile(r"^Diamond Sawblades and Parts Thereof From (.+?): (.+)$", re.I), "金刚石锯片及零部件（涉及{0}）：反倾销税令延续"),
+]
+COUNTRY_TRANSLATIONS = {
+    "the People's Republic of China": "中国", "People's Republic of China": "中国",
+    "the Socialist Republic of Vietnam": "越南", "Socialist Republic of Vietnam": "越南",
+    "the Republic of Türkiye": "土耳其", "Republic of Türkiye": "土耳其",
+    "Taiwan": "中国台湾", "Malaysia": "马来西亚", "Indonesia": "印度尼西亚",
+    "Mexico": "墨西哥", "India": "印度", "Spain": "西班牙", "Austria": "奥地利",
+    "Thailand": "泰国", "China": "中国", "United States": "美国", "the United States": "美国"
+}
+
 def load(path, default):
     try: return json.loads(path.read_text(encoding="utf-8"))
     except FileNotFoundError: return default
@@ -24,7 +43,34 @@ def save(path, obj):
 def now(): return datetime.now(timezone.utc)
 def iso(dt=None): return (dt or now()).isoformat(timespec="seconds")
 def key(text): return re.sub(r"[^a-z0-9\u3400-\u9fff]+", "", (text or "").lower())
-def event_id(url, title): return hashlib.sha256((url or "" + title).encode("utf-8")).hexdigest()[:20]
+def event_id(url, title): return hashlib.sha256(((url or "") + title).encode("utf-8")).hexdigest()[:20]
+
+def translate_fragment(text):
+    result=text
+    for source, target in sorted(COUNTRY_TRANSLATIONS.items(), key=lambda item: len(item[0]), reverse=True):
+        result=result.replace(source,target)
+    return re.sub(r"\s+", " ", result).strip(" ;:")
+
+def summarize_event(event):
+    title=html.unescape(event.get("title","")).strip()
+    for pattern, template in TITLE_RULES:
+        match=pattern.match(title)
+        if match:
+            translated=[translate_fragment(group) for group in match.groups()]
+            chinese=template.format(*translated)
+            return chinese, chinese
+    translated=translate_fragment(title)
+    summary=html.unescape(re.sub(r"<[^>]+>"," ",event.get("snippet","")))
+    summary=re.sub(r"\s+"," ",summary).strip()
+    if summary and not re.search(r"[\u3400-\u9fff]",summary):
+        summary="来源摘要（原文）："+summary[:220]
+    elif summary:
+        summary=summary[:240]
+    else:
+        summary="公开来源发布了相关政策/贸易救济进展；请核对原文中的涉案产品、税率及生效日期。"
+    return translated or title, summary
+
+
 
 def request_json(url, params=None, timeout=25):
     r = requests.get(url, params=params, timeout=timeout, headers={"User-Agent": UA, "Accept": "application/json"})
@@ -140,25 +186,49 @@ def merge(items, previous, companies, settings):
     ordered=sorted(byid.values(),key=lambda x:(x.get("published","") or x.get("fetched_at","")),reverse=True)
     return ordered[:int(settings.get("max_events",3000))],fresh
 
+def render_event(event):
+    title, summary=summarize_event(event)
+    companies=", ".join(x["name"] for x in event.get("matched_companies",[])) or "未匹配监控企业"
+    scope="涉华" if event.get("china_related") else "国际政策"
+    date=event.get("published","")[:10] or "日期未知"
+    return (f"[{event.get('risk_level','P3')}] {scope}｜{title}\n"
+            f"简述：{summary}\n企业：{companies}｜日期：{date}\n"
+            f"来源：{event.get('source','未知来源')}｜{event.get('url','')}")
+
 def feishu_send(events, settings):
     webhook=os.getenv("FEISHU_WEBHOOK_URL","").strip()
-    if not webhook: return {"sent":0,"sent_ids":[],"status":"FEISHU_WEBHOOK_URL not configured"}
-    fresh=[e for e in events if e.get("risk_level") in ("P1","P2")]
-    if not fresh: return {"sent":0,"sent_ids":[],"status":"no pending P1/P2 events"}
-    secret=os.getenv("FEISHU_SIGNING_SECRET","").strip(); sent_ids=[]; errors=[]
-    for e in fresh[:20]:
-        title=e.get("title","")[:180]; url=e.get("url",""); companies=", ".join(x["name"] for x in e.get("matched_companies",[])) or "未匹配监控企业"
-        text=f"[{e['risk_level']}] {'涉华 · ' if e.get('china_related') else ''}{title}\n企业：{companies}\n来源：{e.get('source','')}\n链接：{url}"
+    if not webhook: return {"sent":0,"sent_ids":[],"messages":0,"status":"FEISHU_WEBHOOK_URL not configured"}
+    pending=[e for e in events if e.get("risk_level") in ("P1","P2") and not e.get("feishu_sent_at")]
+    if not pending: return {"sent":0,"sent_ids":[],"messages":0,"status":"no pending P1/P2 events"}
+    secret=os.getenv("FEISHU_SIGNING_SECRET","").strip()
+    max_chars=int(settings.get("feishu_message_max_chars",12000))
+    header=f"全球外贸风险监控｜待处理 {len(pending)} 条"
+    batches=[]; blocks=[header]; batch_ids=[]
+    for event in pending:
+        block=render_event(event)
+        candidate="\n\n".join(blocks+[block])
+        if len(candidate)>max_chars and len(blocks)>1:
+            batches.append(("\n\n".join(blocks),batch_ids))
+            blocks=[header+"（续）"]; batch_ids=[]
+        blocks.append(block); batch_ids.append(event.get("id",""))
+    if len(blocks)>1: batches.append(("\n\n".join(blocks),batch_ids))
+    sent_ids=[]; errors=[]
+    for text,batch in batches:
         body={"msg_type":"text","content":{"text":text}}
         if secret:
-            ts=str(int(time.time())); sign=hmac.new(f"{ts}\n{secret}".encode(),b"",digestmod=hashlib.sha256).digest()
-            import base64; body["timestamp"]=ts; body["sign"]=base64.b64encode(sign).decode()
+            ts=str(int(time.time()))
+            body["timestamp"]=ts
+            body["sign"]=base64.b64encode(hmac.new(f"{ts}\n{secret}".encode(),b"",digestmod=hashlib.sha256).digest()).decode()
         try:
-            r=requests.post(webhook,json=body,timeout=15); r.raise_for_status(); data=r.json()
-            if data.get("code",0)!=0: raise RuntimeError(str(data))
-            sent_ids.append(e.get("id","")); time.sleep(.25)
-        except Exception as ex: errors.append(str(ex))
-    return {"sent":len(sent_ids),"sent_ids":sent_ids,"errors":errors[:5],"status":"ok" if not errors else "partial"}
+            response=requests.post(webhook,json=body,timeout=20); response.raise_for_status()
+            result=response.json()
+            if result.get("code",0)!=0: raise RuntimeError(str(result))
+            sent_ids.extend(batch)
+        except Exception as exc:
+            errors.append(str(exc)[:300])
+            break
+    return {"sent":len(sent_ids),"sent_ids":sent_ids,"messages":len(batches),"errors":errors[:3],
+            "status":"ok" if not errors else "partial"}
 
 def main():
     ap=argparse.ArgumentParser(); ap.add_argument("--once",action="store_true"); ap.add_argument("--offline",action="store_true"); args=ap.parse_args()
@@ -172,7 +242,7 @@ def main():
     else: inputs,health=collect(sources,int(settings.get("poll_hours",24)))
     merged,fresh=merge(inputs,previous,companies,settings)
     alerts=[x for x in merged if x.get("risk_level") in ("P1","P2") and not x.get("feishu_sent_at")]
-    sent=feishu_send(alerts,settings)
+    sent={"sent":0,"sent_ids":[],"status":"notification disabled"} if args.no_notify else feishu_send(alerts,settings)
     sent_ids=set(sent.get("sent_ids",[]))
     for event in merged:
         if event.get("id") in sent_ids: event["feishu_sent_at"]=iso()
