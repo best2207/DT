@@ -1,28 +1,28 @@
 {
-  "updated_at": "2026-11-17T09:57:12+00:00",
+  "updated_at": "2026-11-17T10:57:36+00:00",
   "sources": {
     "federal_register": {
       "ok": true,
       "count": 79,
-      "checked_at": "2026-11-17T09:56:20+00:00",
-      "seconds": 0.91
+      "checked_at": "2026-11-17T10:56:27+00:00",
+      "seconds": 0.63
     },
     "gdelt": {
       "ok": true,
       "count": 0,
-      "checked_at": "2026-11-17T09:57:10+00:00",
-      "seconds": 49.26
+      "checked_at": "2026-11-17T10:57:14+00:00",
+      "seconds": 46.5
     },
     "mofcom_cacs": {
       "ok": true,
       "count": 0,
-      "checked_at": "2026-11-17T09:57:12+00:00",
-      "seconds": 2.17
+      "checked_at": "2026-11-17T10:57:16+00:00",
+      "seconds": 1.82
     },
     "rss": {
       "ok": true,
       "count": 0,
-      "checked_at": "2026-11-17T09:57:12+00:00",
+      "checked_at": "2026-11-17T10:57:16+00:00",
       "seconds": 0.0
     }
   },
@@ -30,9 +30,10 @@
   "events_total": 37,
   "new_events": 0,
   "new_alerts": 0,
-  "pending_alerts": 28,
+  "pending_alerts": 8,
   "feishu": {
-    "sent": 0,
-    "status": "FEISHU_WEBHOOK_URL not configured"
+    "sent": 20,
+    "errors": [],
+    "status": "ok"
   }
 }
