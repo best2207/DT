@@ -60,6 +60,27 @@ def summarize_event(event):
             chinese=template.format(*translated)
             return chinese, chinese
     translated=translate_fragment(title)
+    # For unlisted English policy titles, translate the action and country while keeping product specifics in the source link.
+    generic=re.match(r"^(.+?) From (.+?): (.+)$", title, re.I)
+    if generic:
+        countries=translate_fragment(generic.group(2))
+        action=generic.group(3).lower()
+        if "countervailing duty" in action:
+            action_zh="反补贴措施进展"
+        elif "antidumping duty" in action or "anti-dumping" in action:
+            action_zh="反倾销措施进展"
+        elif "safeguard" in action:
+            action_zh="保障措施进展"
+        elif "investigation" in action:
+            action_zh="贸易调查进展"
+        else:
+            action_zh="贸易政策措施进展"
+        if "initiation" in action: action_zh=action_zh.replace("进展","调查立案")
+        elif "final results" in action: action_zh=action_zh.replace("进展","行政复审最终结果")
+        elif "preliminary results" in action: action_zh=action_zh.replace("进展","行政复审初步结果")
+        elif "orders" in action: action_zh=action_zh.replace("进展","税令")
+        elif "continuation" in action: action_zh=action_zh.replace("进展","措施延续")
+        translated=f"{countries}相关贸易措施：{action_zh}"
     summary=html.unescape(re.sub(r"<[^>]+>"," ",event.get("snippet","")))
     summary=re.sub(r"\s+"," ",summary).strip()
     if summary and not re.search(r"[\u3400-\u9fff]",summary):
