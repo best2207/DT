@@ -21,6 +21,13 @@ TITLE_RULES = [
     (re.compile(r"^Certain Pea Protein From (.+?): (.+)$", re.I), "豌豆蛋白（涉及{0}）：反倾销行政复审进展"),
     (re.compile(r"^Diamond Sawblades and Parts Thereof From (.+?): (.+)$", re.I), "金刚石锯片及零部件（涉及{0}）：反倾销税令延续"),
 ]
+COUNTRY_NAMES = {
+    "US":"美国", "USA":"美国", "CN":"中国", "EU":"欧盟", "GB":"英国", "UK":"英国",
+    "CA":"加拿大", "JP":"日本", "KR":"韩国", "AU":"澳大利亚", "IN":"印度",
+    "MX":"墨西哥", "TH":"泰国", "ID":"印度尼西亚", "MY":"马来西亚",
+    "VN":"越南", "TR":"土耳其", "BR":"巴西", "ZA":"南非", "SG":"新加坡",
+    "US Federal Register":"美国"
+}
 COUNTRY_TRANSLATIONS = {
     "the People's Republic of China": "中国", "People's Republic of China": "中国",
     "the Socialist Republic of Vietnam": "越南", "Socialist Republic of Vietnam": "越南",
@@ -207,14 +214,39 @@ def merge(items, previous, companies, settings):
     ordered=sorted(byid.values(),key=lambda x:(x.get("published","") or x.get("fetched_at","")),reverse=True)
     return ordered[:int(settings.get("max_events",3000))],fresh
 
+def policy_country(event):
+    country=str(event.get("country","")).strip()
+    if country in COUNTRY_NAMES: return COUNTRY_NAMES[country]
+    translated=translate_fragment(country)
+    if translated and translated.upper() not in ("", "UNKNOWN", "N/A"): return translated
+    title=event.get("title","")
+    if re.search(r"\bEU\b|European Union", title, re.I): return "欧盟"
+    if "China" in title or "中国" in title: return "美国" if event.get("source")=="Federal Register" else "中国"
+    return "国家/地区待确认"
+
+def shorten_url(url):
+    if not url: return ""
+    try:
+        response=requests.get("https://is.gd/create.php",
+            params={"format":"simple","url":url}, timeout=8,
+            headers={"User-Agent":UA})
+        response.raise_for_status()
+        short=response.text.strip()
+        if short.startswith("https://is.gd/") and len(short)<40: return short
+    except Exception as exc:
+        print(f"URL shortener unavailable: {exc}",file=sys.stderr)
+    return url
+
 def render_event(event):
     title, summary=summarize_event(event)
     companies=", ".join(x["name"] for x in event.get("matched_companies",[])) or "未匹配监控企业"
-    scope="涉华" if event.get("china_related") else "国际政策"
+    country=policy_country(event)
     date=event.get("published","")[:10] or "日期未知"
-    return (f"[{event.get('risk_level','P3')}] {scope}｜{title}\n"
+    source_url=event.get("short_url") or shorten_url(event.get("url",""))
+    event["short_url"]=source_url
+    return (f"【{country}政策｜{event.get('risk_level','P3')}】{'涉华｜' if event.get('china_related') else ''}{title}\n"
             f"简述：{summary}\n企业：{companies}｜日期：{date}\n"
-            f"来源：{event.get('source','未知来源')}｜{event.get('url','')}")
+            f"来源：{event.get('source','未知来源')}｜{source_url}")
 
 def feishu_send(events, settings):
     webhook=os.getenv("FEISHU_WEBHOOK_URL","").strip()
