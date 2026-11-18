@@ -244,9 +244,14 @@ def render_event(event):
     date=event.get("published","")[:10] or "日期未知"
     source_url=event.get("short_url") or shorten_url(event.get("url",""))
     event["short_url"]=source_url
-    return (f"【{country}政策｜{event.get('risk_level','P3')}】{'涉华｜' if event.get('china_related') else ''}{title}\n"
-            f"简述：{summary}\n企业：{companies}｜日期：{date}\n"
-            f"来源：{event.get('source','未知来源')}｜{source_url}")
+    risk=event.get("risk_level","P3")
+    marker="🔴" if risk=="P1" else "🟠"
+    return (f"### {marker} {country}政策 · {risk}{' · 涉华' if event.get('china_related') else ''}\n"
+            f"**{title}**\n"
+            f"> 简述：{summary}\n"
+            f"> 企业：{companies}　|　日期：{date}\n"
+            f"[{event.get('source','未知来源')} · 查看原文]({source_url})")
+
 
 def feishu_send(events, settings):
     webhook=os.getenv("FEISHU_WEBHOOK_URL","").strip()
@@ -255,19 +260,34 @@ def feishu_send(events, settings):
     if not pending: return {"sent":0,"sent_ids":[],"messages":0,"status":"no pending P1/P2 events"}
     secret=os.getenv("FEISHU_SIGNING_SECRET","").strip()
     max_chars=int(settings.get("feishu_message_max_chars",12000))
-    header=f"全球外贸风险监控｜待处理 {len(pending)} 条"
+    header=f"本轮监测发现 {len(pending)} 条风险事件"
     batches=[]; blocks=[header]; batch_ids=[]
     for event in pending:
         block=render_event(event)
-        candidate="\n\n".join(blocks+[block])
+        candidate="\n\n---\n\n".join(blocks+[block])
         if len(candidate)>max_chars and len(blocks)>1:
-            batches.append(("\n\n".join(blocks),batch_ids))
+            batches.append(("\n\n---\n\n".join(blocks),batch_ids))
             blocks=[header+"（续）"]; batch_ids=[]
         blocks.append(block); batch_ids.append(event.get("id",""))
-    if len(blocks)>1: batches.append(("\n\n".join(blocks),batch_ids))
+    if len(blocks)>1: batches.append(("\n\n---\n\n".join(blocks),batch_ids))
     sent_ids=[]; errors=[]
-    for text,batch in batches:
-        body={"msg_type":"text","content":{"text":text}}
+    for content,batch in batches:
+        severity="red" if any(e.get("risk_level")=="P1" for e in pending if e.get("id") in batch) else "orange"
+        card={
+            "schema":"2.0",
+            "header":{
+                "title":{"tag":"plain_text","content":"全球外贸风险预警"},
+                "subtitle":{"tag":"plain_text","content":f"{len(batch)} 条政策与风险动态"},
+                "template":severity,
+                "padding":"12px 12px 12px 12px"
+            },
+            "body":{
+                "direction":"vertical",
+                "padding":"12px 12px 12px 12px",
+                "elements":[{"tag":"markdown","content":content,"text_size":"normal_v2","margin":"0px 0px 0px 0px"}]
+            }
+        }
+        body={"msg_type":"interactive","card":card}
         if secret:
             ts=str(int(time.time()))
             body["timestamp"]=ts
