@@ -58,6 +58,96 @@
     "fetched_at": "2026-11-18T18:04:51+00:00"
   },
   {
+    "title": "Combined Notice of Filings #1",
+    "url": "https://www.federalregister.gov/documents/2026/11/19/2026-23607/combined-notice-of-filings-1",
+    "published": "2026-11-19",
+    "source": "Federal Register",
+    "country": "US",
+    "snippet": "",
+    "type": "official_policy",
+    "id": "df1c2c63717eff921391",
+    "china_related": false,
+    "risk_level": "P3",
+    "matched_companies": [],
+    "fetched_at": "2026-11-19T17:24:15+00:00"
+  },
+  {
+    "title": "Citric Acid and Certain Citrate Salts From Thailand: Final Results of Antidumping Duty Administrative Review; 2024-2025",
+    "url": "https://www.federalregister.gov/documents/2026/11/19/2026-23524/citric-acid-and-certain-citrate-salts-from-thailand-final-results-of-antidumping-duty-administrative",
+    "published": "2026-11-19",
+    "source": "Federal Register",
+    "country": "US",
+    "snippet": "The U.S. Department of Commerce (Commerce) determines that producers and exporters subject to this administrative review did not make sales of subject merchandise at less than normal value (NV) during the period of review (POR), July 1, 2024 through June 30, 2025.",
+    "type": "official_policy",
+    "id": "bf6a67a3869c7c83f384",
+    "china_related": false,
+    "risk_level": "P2",
+    "matched_companies": [],
+    "fetched_at": "2026-11-19T17:24:15+00:00",
+    "short_url": "https://is.gd/aZcSZW",
+    "feishu_sent_at": "2026-11-19T17:24:18+00:00"
+  },
+  {
+    "title": "Certain Softwood Lumber Products From Canada: Amended Final Results of Countervailing Duty Administrative Review; 2024",
+    "url": "https://www.federalregister.gov/documents/2026/11/19/2026-23520/certain-softwood-lumber-products-from-canada-amended-final-results-of-countervailing-duty",
+    "published": "2026-11-19",
+    "source": "Federal Register",
+    "country": "US",
+    "snippet": "The U.S. Department of Commerce (Commerce) is amending the final results of the administrative review of the countervailing duty (CVD) order on certain softwood lumber products (softwood lumber) from Canada to correct a ministerial error. The period of review (POR) is January 1, 2024, through December 31, 2024.",
+    "type": "official_policy",
+    "id": "0e540de9199b26866685",
+    "china_related": false,
+    "risk_level": "P2",
+    "matched_companies": [],
+    "fetched_at": "2026-11-19T17:24:15+00:00",
+    "short_url": "https://is.gd/ye7Spg",
+    "feishu_sent_at": "2026-11-19T17:24:18+00:00"
+  },
+  {
+    "title": "Agency Information Collection Activities; Submission to the Office of Management and Budget; Big Cat Public Safety Act",
+    "url": "https://www.federalregister.gov/documents/2026/11/19/2026-23561/agency-information-collection-activities-submission-to-the-office-of-management-and-budget-big-cat",
+    "published": "2026-11-19",
+    "source": "Federal Register",
+    "country": "US",
+    "snippet": "In accordance with the Paperwork Reduction Act of 1995, we, the U.S. Fish and Wildlife Service (Service), are proposing to revise a currently approved information collection.",
+    "type": "official_policy",
+    "id": "663d86c8559a485cc07e",
+    "china_related": false,
+    "risk_level": "P3",
+    "matched_companies": [],
+    "fetched_at": "2026-11-19T17:24:15+00:00"
+  },
+  {
+    "title": "Addressing Remote Access to Advanced Semiconductors",
+    "url": "https://www.federalregister.gov/documents/2026/11/19/2026-23529/addressing-remote-access-to-advanced-semiconductors",
+    "published": "2026-11-19",
+    "source": "Federal Register",
+    "country": "US",
+    "snippet": "In this interim final rule (IFR), the Department of Commerce is establishing new rules to prevent certain foreign actors from leveraging advanced computing power based on U.S. technology to threaten U.S. national security and foreign policy interests. First, this rule establishes new restrictions which will apply for exports, reexports, or transfers (in-country) to overseas data centers that remotely supply significant volumes of compute to companies headquartered in Country Group D:5 or Macau. These restrictions will undermine the ability of companies headquartered in countries of concern from using U.S. advanced Super Intelligence (SI) semiconductors to train advanced SI models. Data centers, foreign foundries, and chip exporters are required to perform robust due diligence on their customers, including any direct or indirect ownership or control by persons in Country Group D:5 or Macau, as part of complying with this new control. The license requirement will not apply to commercial recommender systems, such as those used by online retailers or social media companies, as these functions do not pose the same national security threat. Second, in addition to the current license requirements for advanced semiconductors, a license will be required to export, reexport, or transfer (in-country) advanced semiconductors to Indonesia, Malaysia, Singapore, Thailand, or Brazil (and any additional country designated by the Secretary of Commerce, in consultation with the Secretary of State or the Assistant to the President for National Security Affairs)--countries which present a higher-than-normal risk of diversion. The license requirement for these five countries will not apply to semiconductors destined to companies headquartered in, or whose ultimate parent company is headquartered in, the United States, provided certain reporting requirements are met. Commerce will be actively monitoring for countries that tolerate evasion of this IFR and will consider a range of consequences for such countries, such as import restrictions, new license requirements on advanced semiconductor exports, downgrading the country's status in the U.S. export control regime, and Entity List designations and temporary export prohibitions for foreign persons involved in such activities. Third, this IFR amends the presumptions which front-end chips fabricators and chip packagers face when exporting advanced-node logic chips. These amendments reduce the number of pathways to overcome the presumptions for chip designers located in destinations which face a license requirement for SI chips. This change gives the U.S. government critical oversight over companies headquartered in certain countries that seek to leverage advanced semiconductor production capabilities in third countries. Finally, the IFR formally rescinds the regulations implementing the Biden-era AI Diffusion Rule. The AI Diffusion Rule has never been enforced. The regulatory changes in this rule formalize the rescission of the AI Diffusion Rule, which the Department of Commerce Bureau of Industry and Security (BIS) announced in May 2025.",
+    "type": "official_policy",
+    "id": "93374195a810c38b1d4e",
+    "china_related": false,
+    "risk_level": "P1",
+    "matched_companies": [],
+    "fetched_at": "2026-11-19T17:24:15+00:00",
+    "short_url": "https://is.gd/p482Ce",
+    "feishu_sent_at": "2026-11-19T17:24:18+00:00"
+  },
+  {
+    "title": "Medicare, Medicaid, and Marketplace Programs; Comprehensive Regulations To Uncover Suspicious Healthcare (CRUSH)",
+    "url": "https://www.federalregister.gov/documents/2026/11/19/2026-23461/medicare-medicaid-and-marketplace-programs-comprehensive-regulations-to-uncover-suspicious",
+    "published": "2026-11-19",
+    "source": "Federal Register",
+    "country": "US",
+    "snippet": "This proposed rule would revise provisions regarding provider enrollment, medical review, investigations, and other program integrity oversight provisions to greatly strengthen our ability to crush fraud, enhance program integrity efforts across Medicare, Medicaid, Children's Health Insurance Program, and the Marketplace and maximize regulatory authorities to address inappropriate payments.",
+    "type": "official_policy",
+    "id": "53c4e6de95582fe1bb07",
+    "china_related": false,
+    "risk_level": "P3",
+    "matched_companies": [],
+    "fetched_at": "2026-11-19T17:24:15+00:00"
+  },
+  {
     "title": "Potassium Phosphate Salts From China; Scheduling of Expedited Five-Year Reviews",
     "url": "https://www.federalregister.gov/documents/2026/11/18/2026-23507/potassium-phosphate-salts-from-china-scheduling-of-expedited-five-year-reviews",
     "published": "2026-11-18",
@@ -69,9 +159,9 @@
     "china_related": true,
     "risk_level": "P2",
     "matched_companies": [],
-    "fetched_at": "2026-11-19T07:58:12+00:00",
+    "fetched_at": "2026-11-19T17:24:15+00:00",
     "short_url": "https://is.gd/58yryR",
-    "feishu_sent_at": "2026-11-19T07:58:13+00:00"
+    "feishu_sent_at": "2026-11-19T17:24:18+00:00"
   },
   {
     "title": "Combined Notice of Filings",
@@ -85,7 +175,7 @@
     "china_related": false,
     "risk_level": "P3",
     "matched_companies": [],
-    "fetched_at": "2026-11-19T07:58:12+00:00"
+    "fetched_at": "2026-11-19T17:24:15+00:00"
   },
   {
     "title": "Combined Notice of Filings #1",
@@ -99,7 +189,7 @@
     "china_related": false,
     "risk_level": "P3",
     "matched_companies": [],
-    "fetched_at": "2026-11-19T07:58:12+00:00"
+    "fetched_at": "2026-11-19T17:24:15+00:00"
   },
   {
     "title": "Combined Notice of Filings #2",
@@ -113,7 +203,7 @@
     "china_related": false,
     "risk_level": "P3",
     "matched_companies": [],
-    "fetched_at": "2026-11-19T07:58:12+00:00"
+    "fetched_at": "2026-11-19T17:24:15+00:00"
   },
   {
     "title": "Amine Compounds From China; Determinations",
@@ -127,9 +217,9 @@
     "china_related": true,
     "risk_level": "P2",
     "matched_companies": [],
-    "fetched_at": "2026-11-19T07:58:12+00:00",
+    "fetched_at": "2026-11-19T17:24:15+00:00",
     "short_url": "https://is.gd/FdryeX",
-    "feishu_sent_at": "2026-11-19T07:58:13+00:00"
+    "feishu_sent_at": "2026-11-19T17:24:18+00:00"
   },
   {
     "title": "Applications for Inclusion on the Binational Panels Roster Under the United States-Mexico-Canada Agreement",
@@ -143,9 +233,9 @@
     "china_related": false,
     "risk_level": "P2",
     "matched_companies": [],
-    "fetched_at": "2026-11-19T07:58:12+00:00",
+    "fetched_at": "2026-11-19T17:24:15+00:00",
     "short_url": "https://is.gd/1bXvti",
-    "feishu_sent_at": "2026-11-19T07:58:13+00:00"
+    "feishu_sent_at": "2026-11-19T17:24:18+00:00"
   },
   {
     "title": "Steel Grating From China; Determinations",
@@ -159,9 +249,9 @@
     "china_related": true,
     "risk_level": "P2",
     "matched_companies": [],
-    "fetched_at": "2026-11-19T07:58:12+00:00",
+    "fetched_at": "2026-11-19T17:24:15+00:00",
     "short_url": "https://is.gd/pA066H",
-    "feishu_sent_at": "2026-11-19T07:58:13+00:00"
+    "feishu_sent_at": "2026-11-19T17:24:18+00:00"
   },
   {
     "title": "Self-Regulatory Organizations; NYSE Arca, Inc.; Notice of Filing and Immediate Effectiveness of Proposed Rule Change To Amend Its Rules its Rules To Permit the Listing of Binary Options Overlying Key Performance Indicators",
@@ -175,7 +265,7 @@
     "china_related": false,
     "risk_level": "P3",
     "matched_companies": [],
-    "fetched_at": "2026-11-19T07:58:12+00:00"
+    "fetched_at": "2026-11-19T17:24:15+00:00"
   },
   {
     "title": "Self-Regulatory Organizations; NYSE American LLC; Notice of Filing and Immediate Effectiveness of Proposed Change To Amend Its Rules To Permit the Listing of Binary Options Overlying Key Performance Indicators",
@@ -189,7 +279,7 @@
     "china_related": false,
     "risk_level": "P3",
     "matched_companies": [],
-    "fetched_at": "2026-11-19T07:58:12+00:00"
+    "fetched_at": "2026-11-19T17:24:15+00:00"
   },
   {
     "title": "Corrugated Die-Cut Cardboard Boxes From China, Malaysia, and Turkey; Determinations",
