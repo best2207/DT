@@ -1,28 +1,28 @@
 {
-  "updated_at": "2026-11-20T16:12:50+00:00",
+  "updated_at": "2026-11-20T22:41:17+00:00",
   "sources": {
     "federal_register": {
       "ok": true,
       "count": 42,
-      "checked_at": "2026-11-20T16:11:52+00:00",
-      "seconds": 0.31
+      "checked_at": "2026-11-20T22:40:25+00:00",
+      "seconds": 0.66
     },
     "gdelt": {
       "ok": true,
       "count": 0,
-      "checked_at": "2026-11-20T16:12:46+00:00",
-      "seconds": 54.12
+      "checked_at": "2026-11-20T22:41:13+00:00",
+      "seconds": 47.92
     },
     "mofcom_cacs": {
       "ok": true,
       "count": 0,
-      "checked_at": "2026-11-20T16:12:48+00:00",
-      "seconds": 1.9
+      "checked_at": "2026-11-20T22:41:15+00:00",
+      "seconds": 1.36
     },
     "rss": {
       "ok": true,
       "count": 0,
-      "checked_at": "2026-11-20T16:12:48+00:00",
+      "checked_at": "2026-11-20T22:41:15+00:00",
       "seconds": 0.0
     }
   },
