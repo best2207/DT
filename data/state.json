@@ -1,38 +1,38 @@
 {
-  "updated_at": "2026-11-21T23:50:59+00:00",
+  "updated_at": "2026-11-22T06:48:04+00:00",
   "sources": {
     "federal_register": {
       "ok": true,
-      "count": 54,
-      "checked_at": "2026-11-21T23:50:05+00:00",
-      "seconds": 0.51
+      "count": 22,
+      "checked_at": "2026-11-22T06:47:12+00:00",
+      "seconds": 0.55
     },
     "gdelt": {
       "ok": true,
-      "count": 8,
-      "checked_at": "2026-11-21T23:50:56+00:00",
-      "seconds": 50.29
+      "count": 0,
+      "checked_at": "2026-11-22T06:48:01+00:00",
+      "seconds": 48.47
     },
     "mofcom_cacs": {
       "ok": true,
       "count": 0,
-      "checked_at": "2026-11-21T23:50:57+00:00",
-      "seconds": 1.63
+      "checked_at": "2026-11-22T06:48:02+00:00",
+      "seconds": 1.44
     },
     "rss": {
       "ok": true,
       "count": 0,
-      "checked_at": "2026-11-21T23:50:57+00:00",
+      "checked_at": "2026-11-22T06:48:02+00:00",
       "seconds": 0.0
     }
   },
   "companies_monitored": 0,
   "events_total": 174,
-  "new_events": 6,
-  "new_alerts": 4,
+  "new_events": 0,
+  "new_alerts": 0,
   "pending_alerts": 0,
   "feishu": {
-    "sent": 14,
+    "sent": 5,
     "messages": 1,
     "errors": [],
     "status": "ok"
