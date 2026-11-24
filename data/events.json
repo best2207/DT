@@ -1,5 +1,247 @@
 [
   {
+    "title": "Pentagon rebukes Canada over defense spending and F - 35 review , calling it a weak partner",
+    "url": "https://www.wxii12.com/article/pentagon-rebukes-canada-defense-spending-f35-review/74514169",
+    "published": "20261124T051500Z",
+    "source": "wxii12.com",
+    "country": "United States",
+    "snippet": "",
+    "type": "news",
+    "id": "23b1c58e21f83554cf41",
+    "china_related": false,
+    "risk_level": "P3",
+    "matched_companies": [],
+    "fetched_at": "2026-11-24T06:03:33+00:00"
+  },
+  {
+    "title": "Democrat Conflicting AI Camps",
+    "url": "https://foreignpolicy.com/2026/11/23/democratic-party-ai-race-china-regulation-nvidia-data-centers/?tpcc=recirc_trending062921",
+    "published": "20261124T044500Z",
+    "source": "foreignpolicy.com",
+    "country": "United States",
+    "snippet": "",
+    "type": "news",
+    "id": "5cdfee614c2fdc2ea034",
+    "china_related": false,
+    "risk_level": "P3",
+    "matched_companies": [],
+    "fetched_at": "2026-11-24T06:03:33+00:00"
+  },
+  {
+    "title": "China has changed tactics but still thwarts India rise : U . S . panel",
+    "url": "https://www.cnbc.com/2026/11/24/us-china-thwarting-india-growth.html",
+    "published": "20261124T044500Z",
+    "source": "cnbc.com",
+    "country": "United States",
+    "snippet": "",
+    "type": "news",
+    "id": "972873725883f129e3cc",
+    "china_related": true,
+    "risk_level": "P2",
+    "matched_companies": [],
+    "fetched_at": "2026-11-24T06:03:33+00:00",
+    "short_url": "https://is.gd/ZmhfFD",
+    "feishu_sent_at": "2026-11-24T06:03:35+00:00"
+  },
+  {
+    "title": "英欧关系持续升温 ， 达成多项合作协议 _ 新闻频道 _ 中国青年网",
+    "url": "https://news.youth.cn/gj/202611/t20261124_16980981.htm",
+    "published": "20261124T033000Z",
+    "source": "news.youth.cn",
+    "country": "",
+    "snippet": "",
+    "type": "news",
+    "id": "61bb6234c60538cb93c7",
+    "china_related": true,
+    "risk_level": "P2",
+    "matched_companies": [],
+    "fetched_at": "2026-11-24T06:03:33+00:00",
+    "short_url": "https://is.gd/eURZA9",
+    "feishu_sent_at": "2026-11-24T06:03:35+00:00"
+  },
+  {
+    "title": "看零跑的工厂 ， 我倒吸一口凉气",
+    "url": "https://finance.sina.com.cn/roll/2026-11-24/doc-inizveck0092927.shtml",
+    "published": "20261124T033000Z",
+    "source": "finance.sina.com.cn",
+    "country": "China",
+    "snippet": "",
+    "type": "news",
+    "id": "1911246feef12b6e1e27",
+    "china_related": false,
+    "risk_level": "P3",
+    "matched_companies": [],
+    "fetched_at": "2026-11-24T06:03:33+00:00"
+  },
+  {
+    "title": "汽车消费政策扩围 后市场领域成新增长点 _ 央广网",
+    "url": "https://tech.cnr.cn/techyw/kan/20261124/t20261124_527881429.shtml",
+    "published": "20261124T033000Z",
+    "source": "tech.cnr.cn",
+    "country": "",
+    "snippet": "",
+    "type": "news",
+    "id": "3d863088cfda15b5f3bc",
+    "china_related": false,
+    "risk_level": "P3",
+    "matched_companies": [],
+    "fetched_at": "2026-11-24T06:03:33+00:00"
+  },
+  {
+    "title": "视频丨汽车消费政策扩围 后市场领域成新增长点",
+    "url": "https://finance.qianlong.com/2026/1124/8754824.shtml",
+    "published": "20261124T031500Z",
+    "source": "finance.qianlong.com",
+    "country": "China",
+    "snippet": "",
+    "type": "news",
+    "id": "43362c67cd483bc4abbd",
+    "china_related": false,
+    "risk_level": "P3",
+    "matched_companies": [],
+    "fetched_at": "2026-11-24T06:03:33+00:00"
+  },
+  {
+    "title": "Xi Jiping impulsa el  sueño chino  pese a presiones de EU",
+    "url": "https://www.sinembargo.mx/4908527/xi-jinping-desafia-los-aranceles-de-trump-para-cumplir-su-sueno-chino-close-up/",
+    "published": "20261124T031500Z",
+    "source": "sinembargo.mx",
+    "country": "Mexico",
+    "snippet": "",
+    "type": "news",
+    "id": "dccb3847653f70f93c04",
+    "china_related": false,
+    "risk_level": "P3",
+    "matched_companies": [],
+    "fetched_at": "2026-11-24T06:03:33+00:00"
+  },
+  {
+    "title": "产销 、 改装 、 回收 ， 汽车消费全链条发力",
+    "url": "http://news.cyol.com/gb/xiaofei/articles/2026-11/24/content_OVQ7AQtGev.html",
+    "published": "20261124T024500Z",
+    "source": "news.cyol.com",
+    "country": "China",
+    "snippet": "",
+    "type": "news",
+    "id": "6c0a298d848aed77289c",
+    "china_related": false,
+    "risk_level": "P3",
+    "matched_companies": [],
+    "fetched_at": "2026-11-24T06:03:33+00:00"
+  },
+  {
+    "title": "开放 、 创新 、 合作 ， 亚太嘉宾这样说 （ 环球热点 ） -- 国际 -- 人民网",
+    "url": "http://world.people.com.cn/n1/2026/1124/c1002-40839299.html",
+    "published": "20261124T024500Z",
+    "source": "world.people.com.cn",
+    "country": "China",
+    "snippet": "",
+    "type": "news",
+    "id": "a730411faa270eb9a4c2",
+    "china_related": false,
+    "risk_level": "P3",
+    "matched_companies": [],
+    "fetched_at": "2026-11-24T06:03:33+00:00"
+  },
+  {
+    "title": "US stocks rebound as Jensen Huang returns as Nvidia CEO",
+    "url": "https://www.straitstimes.com/business/companies-markets/us-stocks-surge-as-jensen-huang-returns-as-nvidia-ceo",
+    "published": "20261124T014500Z",
+    "source": "straitstimes.com",
+    "country": "Singapore",
+    "snippet": "",
+    "type": "news",
+    "id": "2e05bdd95b0b523001b3",
+    "china_related": false,
+    "risk_level": "P3",
+    "matched_companies": [],
+    "fetched_at": "2026-11-24T06:03:33+00:00"
+  },
+  {
+    "title": "미국은 관세 127 . 5 %, 한국은 8 %... 국산 전기차 턱밑까지 추격한 중국산 전기차",
+    "url": "https://www.insight.co.kr/news/583267",
+    "published": "20261124T014500Z",
+    "source": "insight.co.kr",
+    "country": "South Korea",
+    "snippet": "",
+    "type": "news",
+    "id": "aa8c1ae9daee23876e73",
+    "china_related": false,
+    "risk_level": "P3",
+    "matched_companies": [],
+    "fetched_at": "2026-11-24T06:03:33+00:00"
+  },
+  {
+    "title": "Sen . Ron Wyden on Nvidia and Epstein ; Oregon eyes transgender athlete ballot measure",
+    "url": "https://www.klcc.org/podcast/oregon-on-the-record/2026-11-23/sen-ron-wyden-on-nvidia-and-epstein-oregon-eyes-transgender-athlete-ballot-measure",
+    "published": "20261124T011500Z",
+    "source": "klcc.org",
+    "country": "United States",
+    "snippet": "",
+    "type": "news",
+    "id": "80a5098a5f1830791610",
+    "china_related": false,
+    "risk_level": "P3",
+    "matched_companies": [],
+    "fetched_at": "2026-11-24T06:03:33+00:00"
+  },
+  {
+    "title": "Nvidia shares soar more than 30 % after Huang reinstated as CEO",
+    "url": "https://www.kake.com/news/business/nvidia-shares-soar-more-than-30-after-huang-reinstated-as-ceo/article_b1c1e58b-f86b-5cb2-844e-3132ed59668f.html",
+    "published": "20261124T011500Z",
+    "source": "kake.com",
+    "country": "United States",
+    "snippet": "",
+    "type": "news",
+    "id": "a4ae52f3230333e4c711",
+    "china_related": false,
+    "risk_level": "P3",
+    "matched_companies": [],
+    "fetched_at": "2026-11-24T06:03:33+00:00"
+  },
+  {
+    "title": "Wall Street jumps back as Jensen Huang returns as Nvidia CEO",
+    "url": "https://www.channelnewsasia.com/world/nvidia-wall-street-us-stocks-huang-ceo-shares-6576061",
+    "published": "20261124T011500Z",
+    "source": "channelnewsasia.com",
+    "country": "United States",
+    "snippet": "",
+    "type": "news",
+    "id": "7569f2e4566f09d66bd8",
+    "china_related": false,
+    "risk_level": "P3",
+    "matched_companies": [],
+    "fetched_at": "2026-11-24T06:03:33+00:00"
+  },
+  {
+    "title": "海南黄金珠宝产业如何  破蚌新生  | 海报深观察 - 南海网",
+    "url": "https://www.hinews.cn/page?n=2849312&m=1&s=1044",
+    "published": "20261124T011500Z",
+    "source": "hinews.cn",
+    "country": "China",
+    "snippet": "",
+    "type": "news",
+    "id": "6a1d86d3ef4a1a22e9c3",
+    "china_related": false,
+    "risk_level": "P3",
+    "matched_companies": [],
+    "fetched_at": "2026-11-24T06:03:33+00:00"
+  },
+  {
+    "title": "Nvidia shares soar more than 30 % after Huang reinstated as CEO",
+    "url": "https://www.kitv.com/news/business/nvidia-shares-soar-more-than-30-after-huang-reinstated-as-ceo/article_b13d5332-09d9-58ed-b741-e7d655ea7bfd.html",
+    "published": "20261124T003000Z",
+    "source": "kitv.com",
+    "country": "United States",
+    "snippet": "",
+    "type": "news",
+    "id": "da854681c2ed9e9ca567",
+    "china_related": false,
+    "risk_level": "P3",
+    "matched_companies": [],
+    "fetched_at": "2026-11-24T06:03:33+00:00"
+  },
+  {
     "title": "Trump Threatens Tax on Companies That Build Data Centers Abroad – NaturalNews . com",
     "url": "https://www.naturalnews.com/2026-11-23-trump-threatens-tax-companies-build-data-centers-abroad.html",
     "published": "20261123T213000Z",
@@ -124,6 +366,34 @@
     "risk_level": "P3",
     "matched_companies": [],
     "fetched_at": "2026-11-23T22:03:47+00:00"
+  },
+  {
+    "title": "Nasdaq surges 6 %, Dow soars 1 , 400 pts as Jensen Huang Nvidia return revives AI trade",
+    "url": "https://economictimes.indiatimes.com/markets/us-stocks/wall-street-guide/nasdaq-surges-6-dow-soars-1400-pts-as-jensen-huangs-nvidia-return-revives-ai-trade/articleshow/136113776.cms",
+    "published": "20261123T213000Z",
+    "source": "economictimes.indiatimes.com",
+    "country": "India",
+    "snippet": "",
+    "type": "news",
+    "id": "d36b254e02a2849c821a",
+    "china_related": false,
+    "risk_level": "P3",
+    "matched_companies": [],
+    "fetched_at": "2026-11-24T06:03:33+00:00"
+  },
+  {
+    "title": "Мировое сообщество может отказаться от борьбы с изменением климата",
+    "url": "https://iz.ru/2207079/dmitrii-migunov/cop-iz-izby-globalnuiu-borbu-s-izmeneniem-klimata-svernuli",
+    "published": "20261123T213000Z",
+    "source": "iz.ru",
+    "country": "Russia",
+    "snippet": "",
+    "type": "news",
+    "id": "a3ea03e5bd6cdda7cfaa",
+    "china_related": false,
+    "risk_level": "P3",
+    "matched_companies": [],
+    "fetched_at": "2026-11-24T06:03:33+00:00"
   },
   {
     "title": "  엔비디아 사태에 미중 무역전쟁 다시 불붙나 … 반도체 규제에 중국 희토류 보복 경고",
@@ -911,7 +1181,7 @@
     "china_related": false,
     "risk_level": "P3",
     "matched_companies": [],
-    "fetched_at": "2026-11-23T22:03:47+00:00"
+    "fetched_at": "2026-11-24T06:03:33+00:00"
   },
   {
     "title": "Certain Transformers and Components Thereof; Notice of a Commission Determination Not To Review an Initial Determination Granting Joint Motion To Terminate the Investigation Based on Settlement; Termination of the Investigation in Its Entirety",
@@ -925,7 +1195,7 @@
     "china_related": false,
     "risk_level": "P3",
     "matched_companies": [],
-    "fetched_at": "2026-11-23T22:03:47+00:00"
+    "fetched_at": "2026-11-24T06:03:33+00:00"
   },
   {
     "title": "Magnesia Carbon Bricks From China and Mexico; Scheduling of Expedited Five-Year Reviews",
@@ -939,9 +1209,9 @@
     "china_related": true,
     "risk_level": "P2",
     "matched_companies": [],
-    "fetched_at": "2026-11-23T22:03:47+00:00",
+    "fetched_at": "2026-11-24T06:03:33+00:00",
     "short_url": "https://is.gd/WFx0YD",
-    "feishu_sent_at": "2026-11-23T22:03:49+00:00"
+    "feishu_sent_at": "2026-11-24T06:03:35+00:00"
   },
   {
     "title": "Certain Cold-Rolled Steel Flat Products From the Republic of Korea: Preliminary Results and Rescission, in Part of Countervailing Duty Administrative Review; 2024",
@@ -955,9 +1225,9 @@
     "china_related": false,
     "risk_level": "P2",
     "matched_companies": [],
-    "fetched_at": "2026-11-23T22:03:47+00:00",
+    "fetched_at": "2026-11-24T06:03:33+00:00",
     "short_url": "https://is.gd/OsWDMp",
-    "feishu_sent_at": "2026-11-23T22:03:49+00:00"
+    "feishu_sent_at": "2026-11-24T06:03:35+00:00"
   },
   {
     "title": "Extension of Import Restrictions Imposed on Archaeological and Ethnological Material of Egypt",
@@ -971,7 +1241,7 @@
     "china_related": false,
     "risk_level": "P3",
     "matched_companies": [],
-    "fetched_at": "2026-11-23T22:03:47+00:00"
+    "fetched_at": "2026-11-24T06:03:33+00:00"
   },
   {
     "title": "Combined Notice of Filings #2",
@@ -985,7 +1255,7 @@
     "china_related": false,
     "risk_level": "P3",
     "matched_companies": [],
-    "fetched_at": "2026-11-23T22:03:47+00:00"
+    "fetched_at": "2026-11-24T06:03:33+00:00"
   },
   {
     "title": "Combined Notice of Filings #1",
@@ -999,7 +1269,7 @@
     "china_related": false,
     "risk_level": "P3",
     "matched_companies": [],
-    "fetched_at": "2026-11-23T22:03:47+00:00"
+    "fetched_at": "2026-11-24T06:03:33+00:00"
   },
   {
     "title": "Plastic Balloons From China; Institution of Antidumping and Countervailing Duty Investigations and Scheduling of Preliminary Phase Investigations",
@@ -1013,9 +1283,9 @@
     "china_related": true,
     "risk_level": "P2",
     "matched_companies": [],
-    "fetched_at": "2026-11-23T22:03:47+00:00",
+    "fetched_at": "2026-11-24T06:03:33+00:00",
     "short_url": "https://is.gd/KQROQA",
-    "feishu_sent_at": "2026-11-23T22:03:49+00:00"
+    "feishu_sent_at": "2026-11-24T06:03:35+00:00"
   },
   {
     "title": "Miscellaneous Technical Amendments; Technical Amendment",
@@ -1029,7 +1299,7 @@
     "china_related": false,
     "risk_level": "P3",
     "matched_companies": [],
-    "fetched_at": "2026-11-23T22:03:47+00:00"
+    "fetched_at": "2026-11-24T06:03:33+00:00"
   },
   {
     "title": "Defense Trade Advisory Group; Notice of Open Meeting",
@@ -1043,7 +1313,7 @@
     "china_related": false,
     "risk_level": "P3",
     "matched_companies": [],
-    "fetched_at": "2026-11-23T22:03:47+00:00"
+    "fetched_at": "2026-11-24T06:03:33+00:00"
   },
   {
     "title": "Agency Information Collection Activities; Submission to the Office of Management and Budget (OMB) for Review and Approval; Comment Request; Additional Protocol Report Forms",
@@ -1057,7 +1327,7 @@
     "china_related": false,
     "risk_level": "P3",
     "matched_companies": [],
-    "fetched_at": "2026-11-23T22:03:47+00:00"
+    "fetched_at": "2026-11-24T06:03:33+00:00"
   },
   {
     "title": "Foreign-Trade Zone (FTZ) 204, Notification of Proposed Production Activity; Primester GP; (Nonplasticized Cellulose Acetate Flakes); Kingsport, Tennessee",
@@ -1071,7 +1341,7 @@
     "china_related": false,
     "risk_level": "P3",
     "matched_companies": [],
-    "fetched_at": "2026-11-23T22:03:47+00:00"
+    "fetched_at": "2026-11-24T06:03:33+00:00"
   },
   {
     "title": "United States-Mexico-Canada Agreement (USMCA), Article 10.12: Binational Panel Review: Notice of Request for Panel Review",
@@ -1085,9 +1355,9 @@
     "china_related": false,
     "risk_level": "P2",
     "matched_companies": [],
-    "fetched_at": "2026-11-23T22:03:47+00:00",
+    "fetched_at": "2026-11-24T06:03:33+00:00",
     "short_url": "https://is.gd/ACYCxf",
-    "feishu_sent_at": "2026-11-23T22:03:49+00:00"
+    "feishu_sent_at": "2026-11-24T06:03:35+00:00"
   },
   {
     "title": "Notice of OFAC Sanctions Action",
@@ -1101,9 +1371,9 @@
     "china_related": false,
     "risk_level": "P1",
     "matched_companies": [],
-    "fetched_at": "2026-11-23T22:03:47+00:00",
+    "fetched_at": "2026-11-24T06:03:33+00:00",
     "short_url": "https://is.gd/TNKAyg",
-    "feishu_sent_at": "2026-11-23T22:03:49+00:00"
+    "feishu_sent_at": "2026-11-24T06:03:35+00:00"
   },
   {
     "title": "Self-Regulatory Organizations; 24X National Exchange LLC; Notice of Filing of a Proposed Rule Change To Adopt Rules To Govern the Trading of Options on the Exchange",
@@ -1117,7 +1387,7 @@
     "china_related": false,
     "risk_level": "P3",
     "matched_companies": [],
-    "fetched_at": "2026-11-23T22:03:47+00:00"
+    "fetched_at": "2026-11-24T06:03:33+00:00"
   },
   {
     "title": "Extension of Import Restrictions Imposed on Archaeological and Ethnological Material of Greece",
