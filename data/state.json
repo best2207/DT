@@ -1,28 +1,28 @@
 {
-  "updated_at": "2026-11-25T20:13:43+00:00",
+  "updated_at": "2026-11-26T02:52:17+00:00",
   "sources": {
     "federal_register": {
       "ok": true,
-      "count": 46,
-      "checked_at": "2026-11-25T20:12:46+00:00",
-      "seconds": 1.17
+      "count": 23,
+      "checked_at": "2026-11-26T02:51:23+00:00",
+      "seconds": 0.68
     },
     "gdelt": {
       "ok": true,
       "count": 0,
-      "checked_at": "2026-11-25T20:13:37+00:00",
-      "seconds": 50.7
+      "checked_at": "2026-11-26T02:52:13+00:00",
+      "seconds": 49.48
     },
     "mofcom_cacs": {
       "ok": true,
       "count": 0,
-      "checked_at": "2026-11-25T20:13:39+00:00",
-      "seconds": 2.15
+      "checked_at": "2026-11-26T02:52:14+00:00",
+      "seconds": 1.9
     },
     "rss": {
       "ok": true,
       "count": 0,
-      "checked_at": "2026-11-25T20:13:39+00:00",
+      "checked_at": "2026-11-26T02:52:14+00:00",
       "seconds": 0.0
     }
   },
@@ -32,7 +32,7 @@
   "new_alerts": 0,
   "pending_alerts": 0,
   "feishu": {
-    "sent": 13,
+    "sent": 7,
     "messages": 1,
     "errors": [],
     "status": "ok"
